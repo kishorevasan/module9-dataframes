@@ -46,15 +46,14 @@ usdata$category[usdata$`1960`==max(usdata$`1960`)]
 # Define a function `DetectHighest` that takes in a year as a parameter, and
 # returns the highest spending category of that year
 DetectHighest<- function(year){
-  print(usdata)
-  test<- paste0("`",year,"`")
-  print(usdata$test)
-  return(usdata$category[usdata$year==max(usdata$year)])
+  stryear <- paste0(year)
+  costs <- usdata[[stryear]]
+  return(usdata$category[costs==max(costs)])
 }
 
 # Using your function, determine the highest spending category of each year
-DetectHighest("1940")
-print(DetectHighest(1945))
-print(DetectHighest(1950))
-print(DetectHighest(1955))
-print(DetectHighest(1960))
+DetectHighest(1940)
+DetectHighest(1945)
+DetectHighest(1950)
+DetectHighest(1955)
+DetectHighest(1960)
